@@ -9,19 +9,19 @@ namespace remembering_game
     internal class UserPlayer : BasicPlayer
     {
         #region fields
-          public override string Name { get; }
+        public override string Name { get; }
         #endregion
 
         #region constractor
-          public UserPlayer()
-          {
+        public UserPlayer()
+        {
 
-          }
+        }
 
         public UserPlayer(string name)
-         {
+        {
             Name = name;
-         }
+        }
         #endregion
 
         #region methods
@@ -43,8 +43,6 @@ namespace remembering_game
             }
         }
         #endregion
-
-
 
     }
 }

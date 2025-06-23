@@ -112,8 +112,8 @@ namespace remembering_game
             string name;
             Console.WriteLine("enter 0 if you want to play against the computer and 1 if you want to play with friends");
             int choice;
-            choice= int.Parse(Console.ReadLine());
-            while(choice>1||choice<0)
+            choice = int.Parse(Console.ReadLine());
+            while (choice > 1 || choice < 0)
             {
                 Console.WriteLine("eror enter your choice again");
                 choice = int.Parse(Console.ReadLine());
@@ -131,8 +131,8 @@ namespace remembering_game
             {
                 Console.WriteLine("enter the amount of players you want to play (more than 1)");
                 int amount;
-                amount= int.Parse(Console.ReadLine());
-                while((amount>=4||amount<0))
+                amount = int.Parse(Console.ReadLine());
+                while ((amount >= 4 || amount < 0))
                 {
                     Console.WriteLine("eror enter your choice again");
                     choice = int.Parse(Console.ReadLine());
@@ -172,7 +172,7 @@ namespace remembering_game
                 "2: simbol\n" +
                 "3: letters");
             int x = int.Parse(Console.ReadLine());
-            //לברר!!!!!!
+
             switch (x)
             {
                 case 1:
@@ -230,21 +230,18 @@ namespace remembering_game
             }
             for (int i = 2; i <= 25; i++)
             {
-
                 Console.SetCursorPosition(80, i);
                 Console.WriteLine("  ");
 
             }
             for (int i = 35; i < 80; i++)
             {
-
                 Console.SetCursorPosition(i, 2);
                 Console.WriteLine(" ");
 
             }
             for (int i = 35; i < 80; i++)
             {
-
                 Console.SetCursorPosition(i, 25);
                 Console.WriteLine(" ");
 
@@ -257,7 +254,7 @@ namespace remembering_game
                     Console.WriteLine($"the winner is:{Players[i].Name} with score {Players[i].Score}");
                     Players[i].ShowingCards();
                 }
-             
+
             }
 
             for (int i = 0; i < 10000000; i++)
@@ -289,7 +286,6 @@ namespace remembering_game
                     }
 
                 }
-
 
             }
 
@@ -392,12 +388,11 @@ namespace remembering_game
                     if (b.cards[index1].Equals(b.cards[index2]))
                     {
                         FindCouple(b.cards[index1], b.cards[index2]);
-                        if (!b.IsExistCards()) 
+                        if (!b.IsExistCards())
                         {
                             Winner();
                             break;
                         }
-                          
 
                     }
                     else

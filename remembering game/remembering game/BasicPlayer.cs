@@ -10,7 +10,7 @@ namespace remembering_game
     {
         #region fields
         public int Score { get; set; }
-        public List <BasicCard>Cards { get; set; }   = new List<BasicCard>();
+        public List<BasicCard> Cards { get; set; } = new List<BasicCard>();
         public abstract string Name { get; }
 
         #endregion
@@ -20,7 +20,7 @@ namespace remembering_game
         public abstract int ChooseCard();
 
         public abstract void ShowingCards();
-        
+
         #endregion
 
     }

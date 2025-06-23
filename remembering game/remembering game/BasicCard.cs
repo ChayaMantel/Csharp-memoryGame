@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace remembering_game
 {
-    
-    
+
+
     abstract class BasicCard
     {
         #region fields
         public bool IsOpened { get; set; } = false;
-        public bool First{ get; set; }=false; 
-        public bool Discovered { get; set; }=false;
+        public bool First { get; set; } = false;
+        public bool Discovered { get; set; } = false;
         public Point Position { get; set; }
         public int NumCard { get; set; }
 
         #endregion
 
         #region methods        
-        public override abstract bool Equals(object? obj);   
+        public override abstract bool Equals(object? obj);
 
         public abstract void Drawing();
 

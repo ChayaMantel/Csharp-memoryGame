@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace remembering_game
 {
-    internal class MathAritmetic:BasicCard
+    internal class MathAritmetic : BasicCard
     {
         #region fields
         public string MathAritmeticEx { get; set; }

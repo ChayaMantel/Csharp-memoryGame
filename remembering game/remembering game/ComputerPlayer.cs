@@ -16,30 +16,15 @@ namespace remembering_game
         #region methods
         public override int ChooseCard()
         {
-            BasicCard c = null;
             Random random = new Random();
             //מחיקת הכרטיסים שנמצא להם זוג
-            for (int i = 0; i < Optionalcard.Count(); i++)
-            {
-                if (Optionalcard[i].Discovered == true)
-                {
-                    Optionalcard.RemoveAt(i);
-                    i--;
-                }
-            }
+            Optionalcard.RemoveAll(c => c.Discovered);
             //בדיקה האם אתה כרטיס שני -נשמור את הראשון
-            for (int i = 0; i < Optionalcard.Count(); i++)
-            {
-                if (Optionalcard[i].First == true)
-                {
-                    c = Optionalcard[i];
-                    break;
-                }
-            }
+            BasicCard c = Optionalcard.FirstOrDefault(c => c.First);
 
             if (c == null)//אם אתה כרטיס ראשון
             {
-                //נבחר כרטיס שנפתח אי פעם ןגם יש לו זוג שנפתח אי פעם
+                //נבחר כרטיס שנפתח אי פעם וגם יש לו זוג שנפתח אי פעם
                 for (int i = 0; i < Optionalcard.Count(); i++)
                 {
                     if (Optionalcard[i].IsOpened)
@@ -59,7 +44,7 @@ namespace remembering_game
             }
             else//אם אתה כרטיס שני
             {
-                //מקרה בו יש לו זןג שנפתח אי פעם
+                //מקרה בו יש לו זוג שנפתח אי פעם
                 foreach (var p in Optionalcard)
                 {
                     if (p.Equals(c) && p.IsOpened == true)
@@ -70,7 +55,6 @@ namespace remembering_game
                 while (!Optionalcard[num].IsOpened)
                     num = random.Next(0, Optionalcard.Count());
                 return Optionalcard[num].NumCard;
-
 
             }
 
